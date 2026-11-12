@@ -10,7 +10,7 @@
 <style>
 :root{
   --sepia-dark:#5b3d22;--sepia:#8a6238;--sepia-light:#d8c09a;--paper:#f1e4c8;
-  --green:#3d6b4c;--green-dark:#274a34;--green-light:#5a8a68;
+  --indigo:#25498a;--indigo-dark:#16305a;--indigo-light:#3f67ae;
   --gold:#e8d49a;--cream:#f6ecd2;--ink:#2b1d10;
   --brush:"Yuji Boku","Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
   --brush2:"Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
@@ -32,10 +32,10 @@ header{text-align:center;margin-bottom:18px}
 .site-sub{font-size:13px;letter-spacing:.25em;color:var(--sepia);margin-top:4px}
 nav{margin:16px 0 26px;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 28px;border-top:1px solid var(--sepia);border-bottom:1px solid var(--sepia);padding:10px 0}
 nav a{font-family:var(--brush2);font-size:18px;letter-spacing:.2em;color:var(--sepia-dark);text-decoration:none;padding:2px 6px;border-bottom:2px solid transparent;transition:.2s}
-nav a:hover,nav a.on{color:var(--green-dark);border-bottom-color:var(--green)}
+nav a:hover,nav a.on{color:var(--indigo-dark);border-bottom-color:var(--indigo)}
 
 h1{font-family:var(--brush2);font-weight:400;font-size:28px;letter-spacing:.3em;color:var(--sepia-dark);text-align:center;margin:6px 0 8px}
-h1::after{content:"";display:block;width:90px;height:3px;margin:10px auto 0;background:linear-gradient(90deg,transparent,var(--green),transparent)}
+h1::after{content:"";display:block;width:90px;height:3px;margin:10px auto 0;background:linear-gradient(90deg,transparent,var(--indigo),transparent)}
 .intro{text-align:center;font-size:14px;color:var(--sepia);letter-spacing:.1em;margin-bottom:26px}
 
 /* タイムライン（Twitter形式） */
@@ -43,8 +43,8 @@ h1::after{content:"";display:block;width:90px;height:3px;margin:10px auto 0;back
 .post{display:flex;gap:14px;padding:18px 20px;border-bottom:1px solid rgba(138,98,56,.45)}
 .post:last-child{border-bottom:none}
 .avatar{flex:none;width:46px;height:46px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,var(--green-light),var(--green-dark));
-  color:var(--cream);font-family:var(--brush);font-size:24px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%,var(--indigo-light),var(--indigo-dark));
+  color:#fff;font-family:var(--brush);font-size:24px;display:flex;align-items:center;justify-content:center;
   border:2px solid var(--gold);box-shadow:0 2px 4px rgba(0,0,0,.3)}
 .body{flex:1;min-width:0}
 .meta{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:4px}
