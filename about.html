@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて | 書画の道</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Shippori+Mincho:wght@400;600&family=Yuji+Boku&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sepia-dark:#5b3d22;--sepia:#8a6238;--sepia-light:#d8c09a;--paper:#f1e4c8;
+  --indigo:#25498a;--indigo-dark:#16305a;--indigo-light:#3f67ae;
+  --gold:#e8d49a;--cream:#f6ecd2;--ink:#2b1d10;
+  --brush:"Yuji Boku","Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
+  --brush2:"Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
+  --mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:var(--mincho);color:var(--ink);
+  background:radial-gradient(ellipse at center,var(--sepia-light) 0%,#c4a577 70%,#a98456 100%);padding:18px}
+.frame{max-width:1000px;margin:0 auto;background:var(--paper);
+  border:14px solid var(--sepia);
+  border-image:linear-gradient(135deg,#a97d4a,#6e4a28,#b88c58,#5b3d22) 1;
+  outline:3px solid var(--sepia-dark);outline-offset:-24px;
+  box-shadow:0 8px 30px rgba(60,35,10,.45),inset 0 0 60px rgba(138,98,56,.35);
+  padding:34px 30px 26px;
+  background-image:radial-gradient(circle at 20% 15%,rgba(255,255,255,.35),transparent 40%),radial-gradient(circle at 80% 85%,rgba(138,98,56,.18),transparent 45%)}
+header{text-align:center;margin-bottom:18px}
+.site-title{font-family:var(--brush);font-size:clamp(26px,5vw,40px);letter-spacing:.3em;color:var(--sepia-dark)}
+.site-sub{font-size:13px;letter-spacing:.25em;color:var(--sepia);margin-top:4px}
+nav{margin:16px 0 26px;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 28px;border-top:1px solid var(--sepia);border-bottom:1px solid var(--sepia);padding:10px 0}
+nav a{font-family:var(--brush2);font-size:18px;letter-spacing:.2em;color:var(--sepia-dark);text-decoration:none;padding:2px 6px;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.on{color:var(--indigo-dark);border-bottom-color:var(--indigo)}
+
+h1{font-family:var(--brush2);font-weight:400;font-size:28px;letter-spacing:.3em;color:var(--sepia-dark);text-align:center;margin:6px 0 8px}
+h1::after{content:"";display:block;width:90px;height:3px;margin:10px auto 0;background:linear-gradient(90deg,transparent,var(--indigo),transparent)}
+.intro{text-align:center;font-size:14px;color:var(--sepia);letter-spacing:.1em;margin-bottom:30px}
+.wrap{max-width:820px;margin:0 auto}
+
+.label{font-family:var(--brush2);font-size:19px;letter-spacing:.3em;color:var(--sepia-dark);margin:34px 0 16px;display:flex;align-items:center;gap:12px}
+.label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--sepia),transparent)}
+
+.box{background:rgba(255,250,235,.55);border:1px solid var(--sepia);outline:1px solid rgba(138,98,56,.4);outline-offset:-6px;padding:24px 28px;position:relative}
+.box h3{font-family:var(--brush2);font-weight:400;letter-spacing:.2em;font-size:18px;color:var(--indigo-dark);margin-bottom:8px}
+.box p{font-size:15px;line-height:2;color:#3a2815}
+.box p + h3{margin-top:18px}
+
+/* リンクカード */
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.link-card{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+  background:rgba(255,250,235,.55);border:1px solid var(--sepia);padding:14px 16px;position:relative;transition:.25s}
+.link-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--indigo)}
+.link-card:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(60,35,10,.3);border-color:var(--indigo)}
+.link-icon{flex:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:22px;
+  background:var(--indigo);border:2px solid var(--gold)}
+.link-text{flex:1;min-width:0}
+.link-name{display:block;font-family:var(--brush2);letter-spacing:.1em;font-size:15px;color:var(--indigo-dark);margin-bottom:2px}
+.link-desc{display:block;font-size:12px;line-height:1.6;color:var(--sepia)}
+.link-arrow{flex:none;font-size:20px;color:var(--sepia);transition:.25s}
+.link-card:hover .link-arrow{color:var(--indigo);transform:translateX(3px)}
+
+/* フォーム */
+.form-intro{font-size:14px;line-height:1.9;color:#4a3320;margin-bottom:20px}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-family:var(--brush2);font-size:14px;letter-spacing:.15em;color:var(--sepia-dark);margin-bottom:6px}
+.required{color:#b3261e;font-style:normal}
+.form-input,.form-textarea{width:100%;background:#fffaf0;border:1px solid var(--sepia);color:var(--ink);
+  font-family:var(--mincho);font-size:15px;padding:10px 12px;outline:none;transition:.2s}
+.form-input:focus,.form-textarea:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(37,73,138,.2)}
+.form-textarea{resize:vertical;min-height:140px}
+.field-error{display:block;font-size:12px;color:#b3261e;margin-top:4px}
+.form-submit{display:inline-flex;align-items:center;gap:8px;background:var(--indigo);color:#fff;
+  border:2px solid var(--gold);font-family:var(--brush2);font-size:16px;letter-spacing:.2em;padding:10px 28px;cursor:pointer;transition:.2s;margin-top:6px}
+.form-submit:hover{background:var(--indigo-dark)}
+.form-submit:disabled{opacity:.5;cursor:not-allowed}
+.form-success{background:rgba(37,73,138,.12);border:1px solid var(--indigo);padding:14px 18px;text-align:center;color:var(--indigo-dark);font-size:14px;margin-bottom:18px}
+.form-error-global{background:rgba(179,38,30,.1);border:1px solid #b3261e;padding:12px 16px;color:#b3261e;font-size:13px;margin-bottom:16px}
+
+.back-link{display:inline-block;margin-top:26px;text-decoration:none;color:var(--indigo-dark);font-family:var(--brush2);letter-spacing:.15em;border-bottom:1px solid var(--indigo)}
+.notice{text-align:center;border-top:1px solid var(--sepia);margin-top:40px;padding-top:16px}
+.notice p{font-size:11px;line-height:1.9;color:var(--sepia);margin:0 auto 6px;max-width:760px}
+footer{text-align:center;font-size:12px;letter-spacing:.2em;color:var(--sepia);margin-top:12px}
+@media(max-width:600px){
+  body{padding:8px}
+  .frame{padding:22px 14px 18px;border-width:10px}
+  .box{padding:20px 18px}
+  .link-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <div class="site-title">書画の道</div>
+    <div class="site-sub">― 書と画を学ぶ記録 ―</div>
+  </header>
+
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">稽古日記</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="about.html" class="on">このサイトについて</a>
+  </nav>
+
+  <h1>このサイトについて</h1>
+  <p class="intro">― About &amp; Links ―</p>
+
+  <main class="wrap">
+    <div class="box">
+      <h3>サイトについて</h3>
+      <p>「書画の道」は、書道と絵の勉強の記録をつづるサイトです。稽古日記に日々の進捗を書き、ギャラリーには関連の漫画やイラスト、4コマ、コラムを並べています。</p>
+      <h3>運営者</h3>
+      <p>Azalea72。漫画とイラストを描いています。（ここに自己紹介を書き足してください）</p>
+    </div>
+
+    <p class="label">漫画・イラスト掲載サイト</p>
+    <div class="link-grid">
+      <a class="link-card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+        <div class="link-icon">📚</div>
+        <div class="link-text"><span class="link-name">ジャンプルーキー</span><span class="link-desc">オリジナル漫画を掲載中</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+      <a class="link-card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+        <div class="link-icon">🎨</div>
+        <div class="link-text"><span class="link-name">Pixiv</span><span class="link-desc">二次創作はこちらに掲載</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+    <p class="label">SNS・その他</p>
+    <div class="link-grid">
+      <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+        <div class="link-icon">🦋</div>
+        <div class="link-text"><span class="link-name">Bluesky</span><span class="link-desc">近況・作品のお知らせ</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+        <div class="link-icon">🎬</div>
+        <div class="link-text"><span class="link-name">YouTube（リリポピ）</span><span class="link-desc">動画チャンネル</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+      <a class="link-card" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+        <div class="link-icon">🌸</div>
+        <div class="link-text"><span class="link-name">リリポピのホームページ</span><span class="link-desc">別サイト</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+    <p class="label">Azalea72のホームページ</p>
+    <div class="link-grid">
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+        <div class="link-icon">📖</div>
+        <div class="link-text"><span class="link-name">書評サイト</span><span class="link-desc">本・アニメ・映画・ゲーム・小説の備忘録</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+        <div class="link-icon">🍔</div>
+        <div class="link-text"><span class="link-name">英語サイト（English Site）</span><span class="link-desc">英語話者と英語学習者に向けたサイト</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+        <div class="link-icon">☁️</div>
+        <div class="link-text"><span class="link-name">水彩画サイト</span><span class="link-desc">水彩画掲載</span></div>
+        <span class="link-arrow">›</span>
+      </a>
+    </div>
+
+    <p class="label">お問い合わせフォーム</p>
+    <div class="box">
+      <p class="form-intro">ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+      <div data-fs-success class="form-success" style="display:none;">
+        <p>✦ メッセージを送信しました。ありがとうございます！</p>
+      </div>
+      <div data-fs-error class="form-error-global" style="display:none;"></div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="name">お名前</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="お名前" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス <span class="required">*</span></label>
+          <input class="form-input" type="email" id="email" name="email" data-fs-field placeholder="example@email.com" required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">メッセージ <span class="required">*</span></label>
+          <textarea class="form-textarea" id="message" name="message" data-fs-field placeholder="メッセージを入力してください…" rows="6" required></textarea>
+          <span data-fs-error="message" class="field-error"></span>
+        </div>
+        <button class="form-submit" type="submit" data-fs-submit-btn>📮 送信する</button>
+      </form>
+    </div>
+
+    <a class="back-link" href="index.html">← トップページに戻る</a>
+  </main>
+
+  <div class="notice">
+    <p>当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載・転載、二次利用を禁止します。スクリーンショットの転載・無断引用はご遠慮ください。</p>
+    <p>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+  </div>
+  <footer>© 2026 書画の道 ／ 一筆一筆、心をこめて</footer>
+</div>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvpvoz' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
