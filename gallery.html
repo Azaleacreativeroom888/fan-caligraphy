@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ギャラリー | 書画の道</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Shippori+Mincho:wght@400;600&family=Yuji+Boku&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sepia-dark:#5b3d22;--sepia:#8a6238;--sepia-light:#d8c09a;--paper:#f1e4c8;
+  --indigo:#25498a;--indigo-dark:#16305a;--indigo-light:#3f67ae;
+  --gold:#e8d49a;--cream:#f6ecd2;--ink:#2b1d10;
+  --brush:"Yuji Boku","Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
+  --brush2:"Yuji Syuku","Hiragino Mincho ProN","Yu Mincho",serif;
+  --mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:var(--mincho);color:var(--ink);
+  background:radial-gradient(ellipse at center,var(--sepia-light) 0%,#c4a577 70%,#a98456 100%);padding:18px}
+.frame{max-width:1000px;margin:0 auto;background:var(--paper);
+  border:14px solid var(--sepia);
+  border-image:linear-gradient(135deg,#a97d4a,#6e4a28,#b88c58,#5b3d22) 1;
+  outline:3px solid var(--sepia-dark);outline-offset:-24px;
+  box-shadow:0 8px 30px rgba(60,35,10,.45),inset 0 0 60px rgba(138,98,56,.35);
+  padding:34px 30px 26px;
+  background-image:radial-gradient(circle at 20% 15%,rgba(255,255,255,.35),transparent 40%),radial-gradient(circle at 80% 85%,rgba(138,98,56,.18),transparent 45%)}
+header{text-align:center;margin-bottom:18px}
+.site-title{font-family:var(--brush);font-size:clamp(26px,5vw,40px);letter-spacing:.3em;color:var(--sepia-dark)}
+.site-sub{font-size:13px;letter-spacing:.25em;color:var(--sepia);margin-top:4px}
+nav{margin:16px 0 26px;display:flex;justify-content:center;flex-wrap:wrap;gap:8px 28px;border-top:1px solid var(--sepia);border-bottom:1px solid var(--sepia);padding:10px 0}
+nav a{font-family:var(--brush2);font-size:18px;letter-spacing:.2em;color:var(--sepia-dark);text-decoration:none;padding:2px 6px;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.on{color:var(--indigo-dark);border-bottom-color:var(--indigo)}
+
+h1{font-family:var(--brush2);font-weight:400;font-size:28px;letter-spacing:.3em;color:var(--sepia-dark);text-align:center;margin:6px 0 8px}
+h1::after,h2::after{content:"";display:block;width:90px;height:3px;margin:10px auto 0;background:linear-gradient(90deg,transparent,var(--indigo),transparent)}
+.intro{text-align:center;font-size:14px;color:var(--sepia);letter-spacing:.1em;margin-bottom:30px}
+h2{font-family:var(--brush2);font-weight:400;font-size:23px;letter-spacing:.3em;color:var(--sepia-dark);text-align:center;margin:34px 0 20px}
+
+/* 作品 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.work{background:rgba(255,250,235,.55);border:1px solid var(--sepia);outline:1px solid rgba(138,98,56,.4);outline-offset:-6px;padding:14px}
+.ph{aspect-ratio:4/3;background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 6px,transparent 6px 12px),
+  linear-gradient(135deg,var(--indigo-light),var(--indigo-dark));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:var(--brush);font-size:34px;letter-spacing:.1em;border:2px solid var(--gold);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.work h3{font-family:var(--brush2);font-weight:400;letter-spacing:.15em;font-size:16px;margin:10px 0 2px;color:var(--sepia-dark)}
+.work p{font-size:13px;line-height:1.8;color:#4a3320}
+
+/* 4コマ */
+.yonkoma{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;background:rgba(255,250,235,.55);border:1px solid var(--sepia);padding:16px}
+.koma{display:flex;align-items:center;gap:12px}
+.koma .no{flex:none;width:30px;height:30px;border-radius:50%;background:var(--indigo);color:#fff;font-family:var(--brush2);display:flex;align-items:center;justify-content:center;font-size:15px}
+.koma .ph{flex:1;aspect-ratio:16/9;font-size:22px;border-width:2px}
+.yk-title{text-align:center;font-family:var(--brush2);letter-spacing:.15em;color:var(--sepia-dark);margin-top:8px}
+
+/* コラム */
+.column{max-width:640px;margin:0 auto;background:rgba(255,250,235,.55);border:1px solid var(--sepia);outline:1px solid rgba(138,98,56,.4);outline-offset:-6px;padding:26px 28px}
+.column h3{font-family:var(--brush2);font-weight:400;letter-spacing:.2em;font-size:20px;color:var(--indigo-dark);margin-bottom:4px}
+.column time{font-size:12px;color:var(--sepia);letter-spacing:.1em}
+.column p{font-size:15px;line-height:2;margin-top:12px;color:#3a2815}
+
+footer{text-align:center;border-top:1px solid var(--sepia);margin-top:40px;padding-top:16px;font-size:12px;letter-spacing:.2em;color:var(--sepia)}
+@media(max-width:600px){
+  body{padding:8px}
+  .frame{padding:22px 14px 18px;border-width:10px}
+  .column{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <header>
+    <div class="site-title">書画の道</div>
+    <div class="site-sub">― 書と画を学ぶ記録 ―</div>
+  </header>
+
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="blog.html">稽古日記</a>
+    <a href="gallery.html" class="on">ギャラリー</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+
+  <h1>ギャラリー</h1>
+  <p class="intro">書画にまつわる漫画・イラスト・4コマと、ちいさなコラム。</p>
+
+  <!-- 画像を入れるときは .ph の中身を <img src="画像のファイル名" alt="説明"> に差し替えてください -->
+  <h2>イラスト</h2>
+  <div class="grid">
+    <div class="work"><div class="ph">墨</div><h3>作品タイトル</h3><p>（ここに一言説明）</p></div>
+    <div class="work"><div class="ph">筆</div><h3>作品タイトル</h3><p>（ここに一言説明）</p></div>
+    <div class="work"><div class="ph">梅</div><h3>作品タイトル</h3><p>（ここに一言説明）</p></div>
+  </div>
+
+  <h2>漫画</h2>
+  <div class="grid">
+    <div class="work"><div class="ph">漫画</div><h3>漫画タイトル</h3><p>（あらすじや読み切りのリンクなど）</p></div>
+    <div class="work"><div class="ph">漫画</div><h3>漫画タイトル</h3><p>（あらすじや読み切りのリンクなど）</p></div>
+  </div>
+
+  <h2>4コマ</h2>
+  <div class="yonkoma">
+    <div class="koma"><span class="no">一</span><div class="ph">起</div></div>
+    <div class="koma"><span class="no">二</span><div class="ph">承</div></div>
+    <div class="koma"><span class="no">三</span><div class="ph">転</div></div>
+    <div class="koma"><span class="no">四</span><div class="ph">結</div></div>
+  </div>
+  <p class="yk-title">（4コマのタイトル）</p>
+
+  <h2>コラム</h2>
+  <article class="column">
+    <h3>コラムのタイトル</h3>
+    <time datetime="2026-10-12">2026.10.12</time>
+    <p>（サンプル）ここに書画にまつわる軽いコラムを書きます。筆の選び方、墨の香り、好きな画家のことなど、気軽な読み物にどうぞ。</p>
+  </article>
+
+  <footer>© 2026 書画の道 ／ 一筆一筆、心をこめて</footer>
+</div>
+</body>
+</html>
